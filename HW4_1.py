@@ -8,4 +8,5 @@ for x in lst:
 zero_count = lst.count(0)
 for _ in range(zero_count):
     new_lst.append(0)
+
 print(new_lst)
