@@ -15,7 +15,7 @@ elif name:
         if char.isupper():
             valid = False
             break
-        if char in string.punctuation and char != "_":
+        if char in string.punctuation and char == "_":
             valid = False
             break
         if char.isspace():
