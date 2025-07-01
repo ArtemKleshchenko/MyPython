@@ -9,13 +9,15 @@ if name in keyword.kwlist:
     valid = False
 elif name and name[0].isdigit():
     valid = False
+elif "__" in name:
+    valid = False
 elif name:
     underscore_count = 0
     for char in name:
         if char.isupper():
             valid = False
             break
-        if char in string.punctuation and char == "_":
+        if char in string.punctuation and char != "_":
             valid = False
             break
         if char.isspace():
