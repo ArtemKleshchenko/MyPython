@@ -1,22 +1,30 @@
 import keyword
 import string
 
-user_input = input("Введіть ім'я змінної: ")
+name = input("Введіть ім'я змінної: ")
 
-def is_valid_variable_name(name: str) -> bool:
-    if name in keyword.kwlist:
-        return False
-    if name.count('_') > 1:
-        return False
-    if name[0].isdigit():
-        return False
+valid = True
+
+if name in keyword.kwlist:
+    valid = False
+elif name and name[0].isdigit():
+    valid = False
+elif name:
+    underscore_count = 0
     for char in name:
         if char.isupper():
-            return False
+            valid = False
+            break
         if char in string.punctuation and char != "_":
-            return False
+            valid = False
+            break
         if char.isspace():
-            return False
-    return True
+            valid = False
+            break
+        if char == "_":
+            underscore_count += 1
 
-print(f"Результат: {is_valid_variable_name(user_input)}")
+    if underscore_count == len(name):
+        valid = False
+
+print(f"Результат: {valid}")
