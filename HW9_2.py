@@ -1,4 +1,4 @@
-def difference(*args):
+def difference(*args: int | float) -> float:
     if not args:
         return 0
     result = max(args) - min(args)
