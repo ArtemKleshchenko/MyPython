@@ -37,7 +37,6 @@ class Purchase:
 
 lemon = Item('lemon', 5, "yellow", "small")
 apple = Item('apple', 2, "red", "middle")
-
 print(lemon)
 
 buyer = User("Ivan", "Ivanov", "02628162")
@@ -47,6 +46,7 @@ cart = Purchase(buyer)
 cart.add_item(lemon, 4)
 cart.add_item(apple, 20)
 print(cart)
+
 assert isinstance(cart.user, User)
 assert cart.get_total() == 60
 
