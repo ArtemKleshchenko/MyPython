@@ -8,6 +8,7 @@ class Human:
     def __str__(self):
         return f'{self.first_name} {self.last_name}, {self.gender}, {self.age} років'
 
+
 class Student(Human):
     def __init__(self, gender, age, first_name, last_name, record_book):
         super().__init__(gender, age, first_name, last_name)
@@ -15,6 +16,7 @@ class Student(Human):
 
     def __str__(self):
         return f'{super().__str__()}, Залікова книжка: {self.record_book}'
+
 
 class Group:
     def __init__(self, number):
