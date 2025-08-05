@@ -1,17 +1,29 @@
 class Counter:
 
    def __init__(self, current=1, min_value=0, max_value=10):
+       if not (min_value <= current <= max_value):
+           raise ValueError('Початкове значення має бути між мінімумом і максимумом')
        self.current = current
        self.min_value = min_value
        self.max_value = max_value
 
    def set_current(self, start):
+       if not (self.min_value <= start <= self.max_value):
+           raise ValueError('Поточне значення має бути між мінімумом і максимумом')
        self.current = start
 
    def set_max(self, max_max):
+       if max_max < self.min_value:
+           raise ValueError('Максимум не може бути менше мінімуму')
+       if self.current > max_max:
+           raise ValueError('Поточне значення перевищує новий максимум')
        self.max_value = max_max
 
    def set_min(self, min_min):
+       if min_min > self.max_value:
+           raise ValueError('Мінімум не може бути більший за максимум')
+       if self.current < min_min:
+           raise ValueError('Поточне значення менше нового мінімуму')
        self.min_value = min_min
 
    def step_up(self):
