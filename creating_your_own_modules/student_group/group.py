@@ -1,4 +1,4 @@
-from exceptions import GroupLimitError
+from student_group.exceptions import GroupLimitError
 
 class Group:
     def __init__(self, number):

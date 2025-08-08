@@ -1,4 +1,4 @@
-from human import Human
+from student_group.human import Human
 
 class Student(Human):
     def __init__(self, gender, age, first_name, last_name, record_book):
